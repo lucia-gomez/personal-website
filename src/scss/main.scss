@@ -1,0 +1,392 @@
+$red: #e63946;
+$darkblue: #1d3557;
+$mediumblue: #457b9d;
+$lightblue: #a8dadc;
+$white: #f1faee;
+$overlay-color: rgba(29, 53, 87, 0.9);
+$smallfont: 'Roboto', sans-serif;
+$bigfont: 'Anton', sans-serif;
+
+$gallery-square-height: 250px;
+$gallery-square-width: 400px;
+$gallery-caption-height: 48px;
+
+$breakpoint-phone: 500px;
+$breakpoint-tablet: 768px;
+
+html {
+  scroll-behavior: smooth;
+}
+
+.body {
+  background-color: $darkblue;
+  color:$white;
+  font-family: $smallfont;
+  position: relative;
+}
+
+/*******************
+  SECTIONS
+********************/
+
+section {
+  min-height: 100vh;
+  height: auto;
+  padding-top: 75px;
+  text-align: center;
+}
+
+#home {
+  padding-top: 150px;
+  position: relative;
+}
+
+#home-content {
+  display: flex;
+  flex-direction: column;
+  // position: absolute;
+  // top: 50%;
+  // right: 50%;
+  // transform: translate(50%, -50%);
+  padding-bottom: 30px;
+}
+
+#about {
+  background-color: $mediumblue;
+  color: $white;
+}
+
+#portfolio {
+  background-color: $white;
+  color: $darkblue;
+}
+
+#boba {
+  background-color: $white;
+  background-image: url('../images/boba-bg.png');
+  background-position: center;
+  background-size: cover;
+  color: $darkblue;
+}
+
+#boba-demos {
+  background-color: #cfd5d9;
+  color: $darkblue;
+  padding-bottom: 1px;
+}
+
+/*******************
+  NAV BAR
+********************/
+
+nav {
+  background-color: $red;
+}
+
+.isCurrent a {
+  color: $white!important;
+}
+
+/*******************
+  IMAGE HOVER OVERLAYS
+********************/
+
+.hover-wrap {
+  position: relative;
+}
+
+.hover-wrap .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  background: $overlay-color;
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .2s, visibility .2s;
+}
+
+.hover-wrap:hover .overlay {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hover-wrap .overlay p {
+  width: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 20px;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/*******************
+  PROFILE PIC HOVER OVERLAY
+********************/
+
+/// Resize profile picture based on viewport size, with max/min bounds
+///
+/// @author adapted from Eduardo Boucas (@eduardoboucas)
+///
+/// @param {Number}   $responsive  - Viewport-based size
+/// @param {Number}   $min         - Minimum image size (px)
+/// @param {Number}   $max         - Maximum image size (px)
+///                                  (optional)
+/// @param {Number}   $fallback    - Fallback for viewport-
+///                                  based units (optional)
+///
+@mixin responsive-profile-pic($responsive, $min, $max: false, $fallback: false) {
+  @media (min-width: $breakpoint-phone) and (max-width: $breakpoint-tablet) {
+    height: 400px;
+    width: 400px;
+    border-radius: 400px;
+  }
+
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+  
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    height: $min;
+    width: $min;
+    border-radius: $min;
+  }
+  
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+    
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      height: $max;
+      width: $max;
+      border-radius: $max;
+    }
+  }
+  
+  @if $fallback {
+    height: $fallback;
+    width: $fallback;
+    border-radius: $fallback;
+  }
+  
+  height: $responsive;
+  width: $responsive;
+  border-radius: $responsive;
+}
+
+#profile-pic {
+  border: 5px solid $mediumblue;
+  @include responsive-profile-pic(35vw, 250px, 350px, 200px);
+}
+
+#hover-wrap-profile-pic.hover-wrap {
+  @include responsive-profile-pic(35vw, 250px, 350px, 200px);
+  margin: auto;
+}
+
+#overlay-profile-pic.overlay {
+  border: 5px solid $mediumblue;
+  @include responsive-profile-pic(35vw, 250px, 350px, 200px);
+}
+
+/*******************
+  RESPONSIVE HEADERS
+********************/
+
+/// Resize section header text size based on viewport size, with max/min bounds
+///
+/// @author adapted from Eduardo Boucas (@eduardoboucas)
+///
+/// @param {Number}   $responsive  - Viewport-based size
+/// @param {Number}   $min         - Minimum font size (px)
+/// @param {Number}   $max         - Maximum font size (px)
+///                                  (optional)
+/// @param {Number}   $fallback    - Fallback for viewport-
+///                                  based units (optional)
+///
+@mixin responsive-big-text($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+  
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    font-size: $min;
+  }
+  
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+    
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      font-size: $max;
+    }
+  }
+  
+  @if $fallback {
+    font-size: $fallback;
+  }
+  
+  font-size: $responsive;
+}
+
+h1 {
+  font-family: $bigfont;
+  @include responsive-big-text(7vw, 50px, 90px, 60px)
+}
+
+/*******************
+  404 PAGE
+********************/
+
+#section-404 {
+  background-color: $mediumblue;
+  color: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#section-404 img {
+  @include responsive-profile-pic(35vw, 230px, 350px, 200px);
+  width: auto!important;
+}
+
+/*******************
+  ABOUT SECTION
+********************/
+
+#about-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: auto auto; 
+  grid-template-areas:
+    "text1 bars"
+    "text2 numbers";
+  padding-top: 50px;
+}
+
+#about-text1 {
+  grid-area: "text1";
+}
+
+#lang-bars-placeholder {
+  grid-area: "bars";
+}
+
+@media (max-width: $breakpoint-tablet) {
+  #about-grid {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/*******************
+  PROGRESS BARS
+********************/
+
+#lang-bars-placeholder {
+  margin: 0px 30px;
+  width: 40vw;
+}
+
+@media (max-width: $breakpoint-phone) {
+  #lang-bars-placeholder {
+    margin: 0px 30px;
+    width: auto;
+  }
+}
+
+.progress {
+  background-color: $white;
+  height: 15px;
+  margin-top: 1rem;
+}
+
+.progress-bar {
+  background-color: $red;
+}
+
+.progress-label {
+  float: left;
+  line-height: 15px;
+  margin-right: 1em;
+  text-align: right;
+  width: 80px;
+}
+
+/*******************
+  GALLERY
+********************/
+
+.gallery-flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.gallery-item {
+  height: $gallery-square-height;
+  width: $gallery-square-width;
+  background-color: $lightblue;
+  color: $darkblue;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.gallery-item .overlay {
+  border-radius: 5px 5px 0px 0px;
+  height: $gallery-square-height - $gallery-caption-height;
+  margin: 5px;
+}
+
+.gallery-item .overlay p {
+  font-size: 16px;
+  width: 250px;
+}
+
+.gallery-image {
+  border-radius: 5px 5px 0px 0px;
+  background-size: 100%; 
+  background-position: top center;
+  height: ($gallery-square-height - $gallery-caption-height) / $gallery-square-height * 100%;
+  width: 100%;
+}
+
+.gallery-text {
+  padding: 10px;
+}
+
+@media (max-width: 450px) {
+  $gallery-square-width: 300px;
+  .gallery-item {
+    width: $gallery-square-width;
+  }
+  .gallery-image {
+    background-size: 130%!important;
+  }
+}
+
+/*******************
+  BOBA TABLEAU SECTION
+********************/
+
+#boba-description {
+  margin: auto;
+  width: 700px;
+  @media (max-width: $breakpoint-phone) {
+    width: 300px;
+  }
+}
+
+.tableauPlaceholder {
+  height: 80vh;
+  width: 90vw;
+  margin: auto;
+  margin-bottom: 30px;
+}
