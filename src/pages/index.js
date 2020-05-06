@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
-import ProfileImage from "../images/profile-circle.png"
+import Portfolio from "../components/portfolio"
+import ProfileImage from "../../static/images/profile-circle.png"
 
 import "../scss/main.scss"
 
@@ -20,8 +21,13 @@ const IndexPage = () => (
           <h2>Software Engineer</h2>
         </div>
       </section>
-      <section id="about"></section>
-      <section id="portfolio"></section>
+      <section id="about">
+        <h1>About Me</h1>
+      </section>
+      <section id="portfolio">
+        <h1>Things I've Made</h1>
+        <Portfolio />
+      </section>
     </Layout >
   </div>
 )

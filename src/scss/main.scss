@@ -362,6 +362,10 @@ h1 {
   padding: 10px;
 }
 
+.gallery-text h5 {
+  font-weight: 400;
+}
+
 @media (max-width: 450px) {
   $gallery-square-width: 300px;
   .gallery-item {
