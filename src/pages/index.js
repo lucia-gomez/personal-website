@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import Portfolio from "../components/portfolio"
-import ProfileImage from "../../static/images/profile-circle.png"
+import ProfileImage from "../images/profile-circle.png"
 
 import "../scss/main.scss"
 
