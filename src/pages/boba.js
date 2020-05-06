@@ -17,8 +17,10 @@ class Boba extends React.Component {
       hideTabs: true,
       hideToolbar: true,
     };
-    this.viz1 = new window.tableau.Viz(placeholderDiv1, url1, options);
-    this.viz2 = new window.tableau.Viz(placeholderDiv2, url2, options);
+    if (typeof window !== `undefined`) {
+      this.viz1 = new window.tableau.Viz(placeholderDiv1, url1, options);
+      this.viz2 = new window.tableau.Viz(placeholderDiv2, url2, options);
+    }
   }
 
   render() {
