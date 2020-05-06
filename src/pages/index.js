@@ -6,7 +6,7 @@ import ProfileImage from "../images/profile-circle.png"
 import "../scss/main.scss"
 
 const IndexPage = () => (
-  <div className="body" data-offset="0">
+  <div className="body">
     <Layout>
       <section id="home">
         <div id="home-content">

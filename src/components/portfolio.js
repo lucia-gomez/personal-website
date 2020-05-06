@@ -1,10 +1,3 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import ImageWebsite from "../images/website.png"
 import ImageSubreddit from "../images/subreddit.png"
@@ -24,8 +17,8 @@ const projects = [
     src: ImageWebsite,
     title: "Personal Website",
     caption: "This one! That you're on right now!",
-    tools: "React, HTML/CSS, Bootstrap, Sass",
-    link: "https://github.com/lucia-gomez/lucia-gomez.github.io",
+    tools: "React, GatsbyJS, Sass",
+    link: "https://github.com/lucia-gomez/personal-website",
     customSize: "85%",
   },
   {
@@ -33,7 +26,7 @@ const projects = [
     title: "Spill the Tea",
     caption: "Interactive data visualizations for socio-linguistics research on the use of 'bubble tea' vs 'boba'",
     tools: "Tableau",
-    link: "",
+    link: "/boba",
   },
   {
     src: ImageCAC,
@@ -53,7 +46,6 @@ const projects = [
 
 function getStyle(project) {
   return {
-    // backgroundImage: 'url(../../static/images/' + project.src + ')',
     backgroundImage: `url(${project.src})`,
     backgroundSize: project.customSize
   };

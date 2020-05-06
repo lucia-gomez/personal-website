@@ -28,6 +28,7 @@
     "react-helmet": "^6.0.0",
     "react-scrollspy": "^3.4.2",
     "react-typography": "^0.16.19",
+    "tableau-api": "^2.2.3",
     "typeface-anton": "0.0.72",
     "typeface-roboto": "0.0.75",
     "typography": "^0.16.19",
