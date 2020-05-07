@@ -1,26 +1,17 @@
 import React from "react";
 import Layout from "../components/layout";
-import tableau from "tableau-api";
 
 class Boba extends React.Component {
 
-  componentDidMount() {
-    this.initializeViz();
-  }
+  url1 = "https://public.tableau.com/views/BubbleTeaBobaWordChoice/Sheet1?:display_count=y&:origin=viz_share_link";
+  url2 = "https://public.tableau.com/views/BubbleTeaBobaWordChoice/Heatmaps?:display_count=y&:origin=viz_share_link";
 
-  initializeViz() {
-    var placeholderDiv1 = document.getElementById("tableauViz1");
-    var placeholderDiv2 = document.getElementById("tableauViz2");
-    var url1 = "https://public.tableau.com/views/BubbleTeaBobaWordChoice/Sheet1?:display_count=y&:origin=viz_share_link";
-    var url2 = "https://public.tableau.com/views/BubbleTeaBobaWordChoice/Heatmaps?:display_count=y&:origin=viz_share_link";
-    var options = {
-      hideTabs: true,
-      hideToolbar: true,
-    };
-    // if (typeof window !== `undefined`) {
-    //   this.viz1 = new window.tableau.Viz(placeholderDiv1, url1, options);
-    //   this.viz2 = new window.tableau.Viz(placeholderDiv2, url2, options);
-    // }
+  renderTableau(url) {
+    if (typeof window !== `undefined`) {
+      var Tableau = require("tableau-react");
+      return <div className='tableauDemo'><Tableau url={url} /></div>
+    }
+    return null;
   }
 
   render() {
@@ -35,8 +26,8 @@ class Boba extends React.Component {
         and surveyed over 200+ participants. The data below summarizes the survey results. </p>
         </section>
         <section id="boba-demos">
-          <div className='tableauPlaceholder' id="tableauViz1"></div>
-          <div className='tableauPlaceholder' id="tableauViz2"></div>
+          {this.renderTableau(this.url1)}
+          {this.renderTableau(this.url2)}
         </section>
       </Layout>
     );
