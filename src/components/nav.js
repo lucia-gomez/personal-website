@@ -5,12 +5,14 @@ import Scrollspy from 'react-scrollspy'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons"
 
+import Doc from '../assets/resume.pdf';
+
 class CustomNav extends React.Component {
   constructor(props) {
     super(props);
     this.sections = [
       { name: "Home", link: "/" }, { name: "About", link: "/#about" },
-      { name: "Portfolio", link: "/#portfolio" },
+      { name: "Portfolio", link: "/#portfolio" }, { name: "Resume", link: Doc, target: "_blank" },
     ];
 
     this.icons = [
@@ -35,7 +37,7 @@ class CustomNav extends React.Component {
             currentClassName='isCurrent'>
             {this.sections.map((section, key) => (
               <Nav.Item as="li" key={key}>
-                <Nav.Link as="a" href={section.link}>{section.name}</Nav.Link>
+                <Nav.Link as="a" href={section.link} target={section.target ?? null}>{section.name}</Nav.Link>
               </Nav.Item>
             ))}
           </Scrollspy>
