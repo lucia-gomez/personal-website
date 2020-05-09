@@ -12,7 +12,7 @@ $gallery-square-width: 400px;
 $gallery-caption-height: 48px;
 
 $breakpoint-phone: 500px;
-$breakpoint-tablet: 768px;
+$breakpoint-tablet: 769px;
 
 html {
   scroll-behavior: smooth;
@@ -23,6 +23,10 @@ html {
   color:$white;
   font-family: $smallfont;
   position: relative;
+}
+
+h5 {
+  font-weight: 400;
 }
 
 /*******************
@@ -52,13 +56,13 @@ section {
 }
 
 #about {
-  background-color: $mediumblue;
-  color: $white;
+  background-color: $white;
+  color: $darkblue;
 }
 
 #portfolio {
-  background-color: $white;
-  color: $darkblue;
+  background-color: $mediumblue;
+  color: $white;
 }
 
 #boba {
@@ -180,7 +184,7 @@ nav {
 }
 
 #profile-pic {
-  border: 5px solid $mediumblue;
+  border: 5px solid $lightblue;
   @include responsive-profile-pic(35vw, 250px, 350px, 200px);
 }
 
@@ -190,7 +194,7 @@ nav {
 }
 
 #overlay-profile-pic.overlay {
-  border: 5px solid $mediumblue;
+  border: 5px solid $lightblue;
   @include responsive-profile-pic(35vw, 250px, 350px, 200px);
 }
 
@@ -235,7 +239,7 @@ nav {
 
 h1 {
   font-family: $bigfont;
-  @include responsive-big-text(7vw, 50px, 90px, 60px)
+  @include responsive-big-text(7vw, 50px, 90px, 60px);
 }
 
 /*******************
@@ -259,29 +263,63 @@ h1 {
   ABOUT SECTION
 ********************/
 
-#about-grid {
+// #about-layout {
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   height: 100%;
+//   text-align: left;
+// }
+
+#about-layout {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: 2.0fr 1fr;
   grid-template-rows: auto auto; 
   grid-template-areas:
     "text1 bars"
     "text2 numbers";
-  padding-top: 50px;
+  text-align: left;
 }
 
-#about-text1 {
-  grid-area: "text1";
+.about-section {
+  padding: 20px;
 }
 
-#lang-bars-placeholder {
-  grid-area: "bars";
-}
+// #about-blurb {
+//   max-width: 50vw;
+// }
 
 @media (max-width: $breakpoint-tablet) {
-  #about-grid {
+  #about-layout {
     display: flex;
     flex-direction: column;
   }
+
+  .about-section {
+    width: 100%;
+  }
+
+  #about-blurb {
+    max-width: 100%;
+  }
+}
+
+.about-section h4 {
+  color: $mediumblue;
+}
+
+.about-number-item {
+  display: flex;
+  flex-direction: row;
+}
+
+.about-number {
+  color: $red;
+  font-weight: 900;
+  padding-right: 5px;
+  text-align: right;
+  width: 30px;
 }
 
 /*******************
@@ -289,25 +327,25 @@ h1 {
 ********************/
 
 #lang-bars-placeholder {
-  margin: 0px 30px;
-  width: 40vw;
+  width: 30vw;
 }
 
-@media (max-width: $breakpoint-phone) {
+@media (max-width: $breakpoint-tablet) {
   #lang-bars-placeholder {
-    margin: 0px 30px;
-    width: auto;
+    width: 100%;
   }
 }
 
 .progress {
-  background-color: $white;
-  height: 15px;
+  background-color: $lightblue;
   margin-top: 1rem;
 }
 
 .progress-bar {
   background-color: $red;
+  color: $white;
+  text-align: left;
+  padding-left: 5px;
 }
 
 .progress-label {
@@ -315,7 +353,7 @@ h1 {
   line-height: 15px;
   margin-right: 1em;
   text-align: right;
-  width: 80px;
+  width: 70px;
 }
 
 /*******************
@@ -360,10 +398,6 @@ h1 {
 
 .gallery-text {
   padding: 10px;
-}
-
-.gallery-text h5 {
-  font-weight: 400;
 }
 
 @media (max-width: 450px) {

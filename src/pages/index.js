@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
+import About from "../components/about/about"
 import Portfolio from "../components/portfolio"
 import ProfileImage from "../images/profile-circle.png"
 
@@ -23,6 +24,7 @@ const IndexPage = () => (
       </section>
       <section id="about">
         <h1>About Me</h1>
+        <About />
       </section>
       <section id="portfolio">
         <h1>Things I've Made</h1>
