@@ -8,23 +8,57 @@ const chartData1 = {
   datasets: [
     {
       data: [5, 10, 15, 25, 45],
-      label: 'Rainfall',
       backgroundColor: [
-        '#A8222A',
+        '#f7868e',
         '#a8dadc',
         '#457b9d',
         '#1d3557',
         '#e63946'
       ],
       hoverBackgroundColor: [
-        '#A8222A',
-        '#a8dadc',
-        '#457b9d',
-        '#1d3557',
-        '#e63946'
+        '#faafb4',
+        '#bae4e6',
+        '#5190b8',
+        '#304f7a',
+        '#eb6570'
       ],
     }
   ]
+}
+
+const chart1 = (<Doughnut data={chartData1}
+  options={{
+    aspectRatio: 1,
+    responsive: true,
+  }}
+  legend={{
+    "display": false,
+    "position": "right",
+    "fullWidth": false,
+    "reverse": true,
+    "labels": {
+      "fontColor": "#1d3557",
+      "fontFamily": 'Roboto',
+    }
+  }}
+  height={null}
+  width={null} />);
+
+function buildLegend(chart) {
+  const data = chart.props.data
+  const items = [];
+  for (var i = 0; i < data.datasets[0].data.length; i++) {
+    items.push(
+      <div style={{ backgroundColor: data.datasets[0].backgroundColor[i] }} className='legend-item' key={i}>
+        {data.labels[i] ? data.labels[i] : ''}</div>
+    )
+  }
+  items.reverse();
+  return (
+    <div id='chart1-legend'>
+      {items}
+    </div>
+  );
 }
 
 const About = () => (
@@ -38,21 +72,8 @@ const About = () => (
       <LangBars />
     </AboutSection>
     <AboutSection title="How I'm Spending My Quarantine">
-      <Doughnut data={chartData1}
-        options={{
-          responsive: true,
-          maintainAspectRatio: true,
-        }}
-        legend={{
-          "display": true,
-          "position": "bottom",
-          "fullWidth": false,
-          "reverse": false,
-          "labels": {
-            "fontColor": "#1d3557",
-            "fontFamily": 'Roboto',
-          }
-        }} className='chart' />
+      <div className='chart'>{chart1}</div>
+      {buildLegend(chart1)}
     </AboutSection>
   </div>
 )
