@@ -1,7 +1,31 @@
 import React from "react";
 import AboutSection from "./about-section"
-import AboutNumber from "./about-number"
 import LangBars from "./lang-bars"
+import Doughnut from "react-chartjs-2"
+
+const chartData1 = {
+  labels: ['Homework', 'Uber Eats', 'Re-reading Harry Potter', 'Pokemon Go', 'Building this website'],
+  datasets: [
+    {
+      data: [5, 10, 15, 25, 45],
+      label: 'Rainfall',
+      backgroundColor: [
+        '#A8222A',
+        '#a8dadc',
+        '#457b9d',
+        '#1d3557',
+        '#e63946'
+      ],
+      hoverBackgroundColor: [
+        '#A8222A',
+        '#a8dadc',
+        '#457b9d',
+        '#1d3557',
+        '#e63946'
+      ],
+    }
+  ]
+}
 
 const About = () => (
   <div id='about-layout'>
@@ -13,9 +37,22 @@ const About = () => (
     <AboutSection title='Languages & Tools'>
       <LangBars />
     </AboutSection>
-    <AboutSection title='Numbers'>
-      <AboutNumber number='10' text='years old when I started coding' />
-      <AboutNumber number='2.5' text='calzones eaten per month, on average' />
+    <AboutSection title="How I'm Spending My Quarantine">
+      <Doughnut data={chartData1}
+        options={{
+          responsive: true,
+          maintainAspectRatio: true,
+        }}
+        legend={{
+          "display": true,
+          "position": "bottom",
+          "fullWidth": false,
+          "reverse": false,
+          "labels": {
+            "fontColor": "#1d3557",
+            "fontFamily": 'Roboto',
+          }
+        }} className='chart' />
     </AboutSection>
   </div>
 )

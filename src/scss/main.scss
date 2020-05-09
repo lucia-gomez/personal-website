@@ -322,6 +322,10 @@ h1 {
   width: 30px;
 }
 
+.chart {
+  animation: chartjs-render-animation 1ms;
+}
+
 /*******************
   PROGRESS BARS
 ********************/
