@@ -316,46 +316,6 @@ a:hover {
   width: 30px;
 }
 
-#chart-area {
-  display: flex;
-  flex-direction: row;
-}
-
-.chart {
-  width: 300px;
-}
-
-#chart1-legend {
-  padding-left: 20px;
-  padding-top: 10px;
-  margin: auto;
-}
-
-.legend-item {
-  display: flex;
-  color: $white;
-  height: min-content;
-  padding: 2px;
-}
-
-@media (max-width: $breakpoint-tablet) {
-  #chart-area {
-    flex-direction: column;
-  }
-
-  #chart1-legend {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-}
-
-@media (max-width: $breakpoint-phone) {
-  .chart {
-    width: 100%;
-  }
-}
-
 #scratch-note {
   font-size: 12px;
 }
