@@ -17,8 +17,8 @@ const About = () => (
         and <a href='https://www.codecademy.com/' target='_blank' rel='noopener noreferrer'>Codecademy</a>.
         My humble nerd beginnings include
         an <a href='https://scratch.mit.edu/projects/1554944/' target='_blank' rel='noopener noreferrer'>
-            animated Star Trek fanfiction</a>, which is somehow still getting views.
-          Since then, I've gained experience with more legitimate programming languages and tools.</p>
+            animated Star Trek fanfiction</a> in Scratch, which is somehow still getting views.
+          Since then, I've gained experience with more ~legitimate~ programming languages and tools:</p>
         <LangBars />
         <p id='scratch-note'>* My Scratch experience surpasses this scale</p>
       </AboutSection>

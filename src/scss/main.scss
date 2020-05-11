@@ -286,6 +286,7 @@ a:hover {
 
 #about-layout .about-section {
   width: 50%;
+  padding: 0px 40px;
 }
 
 @media (max-width: $breakpoint-phone) {
@@ -301,6 +302,15 @@ a:hover {
 
 .about-section h4 {
   color: $mediumblue;
+}
+
+#about-blurb {
+  background-color: $lightblue;
+  margin: 20px;
+
+  p {
+    margin-bottom: 0px;
+  }
 }
 
 .about-number-item {
