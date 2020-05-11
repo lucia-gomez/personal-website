@@ -61,7 +61,7 @@ const LineGraph = () => (<Line
       "fontFamily": 'Roboto',
     }
   }} width={null}
-  height={400}
+  height={350}
 />);
 
 export default LineGraph

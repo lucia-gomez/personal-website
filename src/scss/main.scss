@@ -43,6 +43,9 @@ section {
 #home {
   padding-top: 150px;
   position: relative;
+  background-color: $darkblue;
+  background-image: url('../images/shapes.png');
+  background-blend-mode: multiply;
 }
 
 #home-content {
@@ -63,6 +66,8 @@ section {
 #portfolio {
   background-color: $mediumblue;
   color: $white;
+  background-image: url('../images/shapes.png');
+  background-blend-mode: multiply;
 }
 
 #boba {
@@ -243,7 +248,7 @@ h1 {
 }
 
 a {
-  color: $mediumblue;
+  color: $red;
 }
 
 a:hover {
@@ -286,7 +291,7 @@ a:hover {
 
 #about-layout .about-section {
   width: 50%;
-  padding: 0px 40px;
+  padding: 10px 40px;
 }
 
 @media (max-width: $breakpoint-phone) {
@@ -305,12 +310,19 @@ a:hover {
 }
 
 #about-blurb {
-  background-color: $lightblue;
+  background-color: $mediumblue;
+  color: $white;
   margin: 20px;
-
+  h4 {
+    color: $white;
+  }
   p {
     margin-bottom: 0px;
   }
+}
+
+.about-blurb-highlight {
+  color: $lightblue;
 }
 
 .about-number-item {
