@@ -123,7 +123,7 @@ nav {
   position: absolute;
   top: 50%;
   left: 50%;
-  font-size: 20px;
+  font-size: 16px;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -242,6 +242,14 @@ h1 {
   @include responsive-big-text(7vw, 50px, 90px, 60px);
 }
 
+a {
+  color: $mediumblue;
+}
+
+a:hover {
+  color: $darkblue;
+}
+
 /*******************
   404 PAGE
 ********************/
@@ -263,41 +271,31 @@ h1 {
   ABOUT SECTION
 ********************/
 
-// #about-layout {
-//   display: flex;
-//   flex-direction: row;
-//   flex-wrap: wrap;
-//   justify-content: center;
-//   height: 100%;
-//   text-align: left;
-// }
-
 #about-layout {
-  display: grid;
-  grid-template-columns: 2.0fr 1fr;
-  grid-template-rows: auto auto; 
-  grid-template-areas:
-    "text1 bars"
-    "text2 numbers";
-  text-align: left;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100%;
 }
 
 .about-section {
   padding: 20px;
+  text-align: left;
 }
 
-@media (max-width: $breakpoint-tablet) {
+#about-layout .about-section {
+  width: 50%;
+}
+
+@media (max-width: $breakpoint-phone) {
   #about-layout {
     display: flex;
     flex-direction: column;
   }
 
-  .about-section {
+  #about-layout .about-section {
     width: 100%;
-  }
-
-  #about-blurb {
-    max-width: 100%;
   }
 }
 
@@ -318,22 +316,38 @@ h1 {
   width: 30px;
 }
 
-.legend-item {
-  color: $white;
-  padding: 2px;
-}
-
-#chart1-legend {
-  padding-top: 10px;
+#chart-area {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  width: 300px;
 }
 
 .chart {
-  position: relative;
   width: 300px;
+}
+
+#chart1-legend {
+  padding-left: 20px;
+  padding-top: 10px;
+  margin: auto;
+}
+
+.legend-item {
+  display: flex;
+  color: $white;
+  height: min-content;
+  padding: 2px;
+}
+
+@media (max-width: $breakpoint-tablet) {
+  #chart-area {
+    flex-direction: column;
+  }
+
+  #chart1-legend {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 @media (max-width: $breakpoint-phone) {
@@ -342,15 +356,20 @@ h1 {
   }
 }
 
+#scratch-note {
+  font-size: 12px;
+}
+
 /*******************
   PROGRESS BARS
 ********************/
 
 #lang-bars-placeholder {
-  width: 30vw;
+  padding-bottom: 10px;
+  padding-right: 10px;
 }
 
-@media (max-width: $breakpoint-tablet) {
+@media (max-width: $breakpoint-phone) {
   #lang-bars-placeholder {
     width: 100%;
   }

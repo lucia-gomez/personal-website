@@ -19,7 +19,7 @@ const IndexPage = () => (
             </div>
           </div>
           <h1 style={{ paddingTop: '20px' }}>LUCIA GOMEZ</h1>
-          <h2>Software Engineer</h2>
+          <h2>Developer</h2>
         </div>
       </section>
       <section id="about">

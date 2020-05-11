@@ -50,7 +50,8 @@ function buildLegend(chart) {
   for (var i = 0; i < data.datasets[0].data.length; i++) {
     items.push(
       <div style={{ backgroundColor: data.datasets[0].backgroundColor[i] }} className='legend-item' key={i}>
-        {data.labels[i] ? data.labels[i] : ''}</div>
+        {data.labels[i] ? data.labels[i] : ''}
+      </div>
     )
   }
   items.reverse();
@@ -62,19 +63,31 @@ function buildLegend(chart) {
 }
 
 const About = () => (
-  <div id='about-layout'>
+  <div>
     <AboutSection title='Hello world!' id='about-blurb'>
-      <p>I'm a junior at Cornell University majoring in Compuer Science and Linguistics.
+      <p>I'm a junior at Cornell University majoring in Computer Science and Linguistics.
       I'm interested in the intersection of language and technology, and I'm constantly learning new
       languages, both human and programming. </p>
     </AboutSection>
-    <AboutSection title='Languages & Tools'>
-      <LangBars />
-    </AboutSection>
-    <AboutSection title="How I'm Spending My Quarantine">
-      <div className='chart'>{chart1}</div>
-      {buildLegend(chart1)}
-    </AboutSection>
+    <div id='about-layout'>
+      <AboutSection title='Languages & Tools'>
+        <p>I fell in love with programming when I was 10 years old, thanks
+        to <a href='https://scratch.mit.edu/' target='_blank' rel='noopener noreferrer'>Scratch* </a>
+        and <a href='https://www.codecademy.com/' target='_blank' rel='noopener noreferrer'>Codecademy</a>.
+        My humble nerd beginnings include
+        an <a href='https://scratch.mit.edu/projects/1554944/' target='_blank' rel='noopener noreferrer'>
+            animated Star Trek fanfiction</a>, which is somehow still getting views.
+          Since then, I've gained experience with more legitimate programming languages and tools.</p>
+        <LangBars />
+        <p id='scratch-note'>* My Scratch experience surpasses this scale</p>
+      </AboutSection>
+      <AboutSection title="How I'm Spending My Quarantine">
+        <div id='chart-area'>
+          <div className='chart'>{chart1}</div>
+          {buildLegend(chart1)}
+        </div>
+      </AboutSection>
+    </div>
   </div>
 )
 
