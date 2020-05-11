@@ -6,6 +6,7 @@
  */
 
 import React from "react"
+import { Helmet } from "react-helmet"
 import PropTypes from "prop-types"
 
 import CustomNav from "./nav"
@@ -16,6 +17,12 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <div className="application">
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Lucia Gomez</title>
+        </Helmet>
+      </div>
       <CustomNav></CustomNav>
       <div>
         <main>{children}</main>

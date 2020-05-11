@@ -3,6 +3,7 @@ module.exports = {
     title: `Lucia Gomez`,
     description: ``,
     author: `Lucia Gomez`,
+    url: 'https://lucia-gomez.netlify.app',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -24,7 +25,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/profile-circle.png`, // This path is relative to the root of the site.
       },
     },
     'gatsby-plugin-sass',
