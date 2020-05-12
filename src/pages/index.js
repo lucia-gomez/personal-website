@@ -9,7 +9,7 @@ import "../scss/main.scss"
 const IndexPage = () => (
   <div className="body">
     <Layout>
-      <section id="home">
+      <section id="home" className='bg-image'>
         <div id="home-content">
           <div className="hover-wrap" id="hover-wrap-profile-pic">
             <img id="profile-pic" src={ProfileImage} alt="profile" />
@@ -26,7 +26,7 @@ const IndexPage = () => (
         <h1>About Me</h1>
         <About />
       </section>
-      <section id="portfolio">
+      <section id="portfolio" className='bg-image'>
         <h1>Things I've Made</h1>
         <Portfolio />
       </section>

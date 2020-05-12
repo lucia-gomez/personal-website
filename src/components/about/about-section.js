@@ -1,9 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-const AboutSection = ({ title, children, id }) => {
+const AboutSection = ({ title, children, id, showbg }) => {
   return (
-    <div className='about-section' id={id}>
+    <div className={showbg ? 'about-section bg-image' : 'about-section'} id={id}>
       <h4>{title}</h4>
       <main>{children}</main>
     </div>

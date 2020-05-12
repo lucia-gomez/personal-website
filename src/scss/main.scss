@@ -44,8 +44,16 @@ section {
   padding-top: 150px;
   position: relative;
   background-color: $darkblue;
+}
+
+.bg-image {
+  background-color: inherit;
   background-image: url('../images/shapes.png');
   background-blend-mode: multiply;
+  background-size: 50%;
+  @media (max-width: $breakpoint-phone) {
+    background-size: 75%;
+  }
 }
 
 #home-content {
@@ -66,8 +74,6 @@ section {
 #portfolio {
   background-color: $mediumblue;
   color: $white;
-  // background-image: url('../images/shapes.png');
-  // background-blend-mode: multiply;
 }
 
 #boba {
@@ -311,18 +317,20 @@ a:hover {
 
 #about-blurb {
   background-color: $mediumblue;
+  background-position: top;
   color: $white;
   margin: 20px;
   h4 {
     color: $white;
   }
   p {
+    padding: 5px;
+    background-color: rgba(69, 123, 157, 0.5);
     margin-bottom: 0px;
   }
-}
-
-.about-blurb-highlight {
-  color: $lightblue;
+  span {
+    color: $lightblue;
+  }
 }
 
 .about-number-item {

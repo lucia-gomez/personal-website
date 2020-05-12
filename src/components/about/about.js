@@ -5,11 +5,11 @@ import LineGraph from "./line-graph"
 
 const About = () => (
   <div>
-    <AboutSection title='Hello world!' id='about-blurb'>
-      <p>I'm a junior at <span class='about-blurb-highlight'>Cornell University</span> majoring in Computer Science and Linguistics (graduating in May, 2021).
-      I'm passionate about the <span class='about-blurb-highlight'>intersection of language and technology</span>, as well as augmented and virtual reality.
+    <AboutSection title='Hello world!' id='about-blurb' showbg={true}>
+      <p>I'm a junior at <span>Cornell University</span> majoring in Computer Science and Linguistics (graduating in May, 2021).
+      I'm passionate about the <span>intersection of language and technology</span>, as well as augmented and virtual reality.
       I enjoy learning new languages, both human and programming, because doing so lets me see the world in new ways.
-      For the past few years, I've been interested in <span class='about-blurb-highlight'>American Sign Language</span> and the challenges associated with machine translation.
+      For the past few years, I've been interested in <span>American Sign Language</span> and the challenges associated with machine translation.
       I have at least one ABBA song stuck in my head at any given time.</p>
     </AboutSection>
     <div id='about-layout'>
