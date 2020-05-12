@@ -47,12 +47,13 @@ section {
 }
 
 .bg-image {
-  background-color: inherit;
+  background-color: $mediumblue;
   background-image: url('../images/shapes.png');
+  background-repeat: no-repeat;
   background-blend-mode: multiply;
-  background-size: 50%;
+  background-size: cover;
   @media (max-width: $breakpoint-phone) {
-    background-size: 75%;
+    background-size: cover;
   }
 }
 
