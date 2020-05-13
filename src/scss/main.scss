@@ -407,6 +407,7 @@ a:hover {
   flex-wrap: wrap;
   justify-content: center;
   padding: 20px;
+  position: relative;
 }
 
 .gallery-item {
@@ -416,6 +417,10 @@ a:hover {
   color: $darkblue;
   border-radius: 5px;
   margin: 5px;
+
+  a {
+    color: $darkblue;
+  }
 }
 
 .gallery-item .overlay {

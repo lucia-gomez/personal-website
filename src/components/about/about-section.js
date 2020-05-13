@@ -1,18 +1,22 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-const AboutSection = ({ title, children, id, showbg }) => {
-  return (
-    <div className={showbg ? 'about-section bg-image' : 'about-section'} id={id}>
-      <h4>{title}</h4>
-      <main>{children}</main>
-    </div>
-  )
+class AboutSection extends React.Component {
+  render() {
+    return (
+      <div className={this.props.showbg ? 'about-section bg-image' : 'about-section'} id={this.props.id}>
+        <h4>{this.props.title}</h4>
+        <main>{this.props.children}</main>
+      </div>
+    );
+  }
 }
 
 AboutSection.propTypes = {
-  title: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
+  showbg: PropTypes.bool,
+  id: PropTypes.string,
 }
 
 export default AboutSection

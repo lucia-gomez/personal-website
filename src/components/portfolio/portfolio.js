@@ -1,9 +1,12 @@
 import React from "react"
-import ImageWebsite from "../images/website.png"
-import ImageSubreddit from "../images/subreddit.png"
-import ImageBoba from "../images/boba-map.png"
-import ImageCAC from "../images/CAC-cards.png"
-import ImageSpaceBears from "../images/spacebears2.png"
+
+import GalleryItem from './gallery-item'
+
+import ImageWebsite from "../../images/portfolio/website.png"
+import ImageSubreddit from "../../images/portfolio/subreddit.png"
+import ImageBoba from "../../images/portfolio/boba-map.png"
+import ImageCAC from "../../images/portfolio/CAC-cards.png"
+import ImageSpaceBears from "../../images/portfolio/spacebears2.png"
 
 const projects = [
   {
@@ -44,31 +47,18 @@ const projects = [
   },
 ];
 
-function getStyle(project) {
-  return {
-    backgroundImage: `url(${project.src})`,
-    backgroundSize: project.customSize
-  };
-}
-
 const Portfolio = () => {
   return (
     <div className="gallery-flex-container">
       {projects.map((project, key) => (
-        <div className="hover-wrap" key={key}>
-          <a href={project.link}>
-            <div className="gallery-item">
-              <div className="gallery-image" style={getStyle(project)} ></div>
-              <div className="gallery-text">
-                <h5>{project.title}</h5>
-              </div>
-              <div className="overlay">
-                <p>{project.caption}<br /><br />{project.tools}
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
+        <GalleryItem
+          image={project.src}
+          caption={project.caption}
+          title={project.title}
+          tools={project.tools}
+          link={project.link}
+          backgroundSize={project.customSize}
+          key={key} />
       ))}
     </div>
   );

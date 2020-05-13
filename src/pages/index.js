@@ -1,7 +1,11 @@
 import React from "react"
+
+import Hoverable from "../components/hoverable"
+import HoverOverlay from "../components/hoverOverlay"
 import Layout from "../components/layout"
 import About from "../components/about/about"
-import Portfolio from "../components/portfolio"
+import Portfolio from "../components/portfolio/portfolio"
+
 import ProfileImage from "../images/profile-circle.png"
 
 import "../scss/main.scss"
@@ -11,13 +15,13 @@ const IndexPage = () => (
     <Layout>
       <section id="home" className='bg-image'>
         <div id="home-content">
-          <div className="hover-wrap" id="hover-wrap-profile-pic">
+          <Hoverable id="hover-wrap-profile-pic">
             <img id="profile-pic" src={ProfileImage} alt="profile" />
-            <div className="overlay" id="overlay-profile-pic">
+            <HoverOverlay id="overlay-profile-pic">
               <p>Sadly, this dog isn't mine. But her name is also Lucia and I cried
             when I met her</p>
-            </div>
-          </div>
+            </HoverOverlay>
+          </Hoverable>
           <h1 style={{ paddingTop: '20px' }}>LUCIA GOMEZ</h1>
           <h2>Developer</h2>
         </div>
