@@ -5,7 +5,7 @@ import HoverOverlay from "../components/hoverOverlay"
 import Layout from "../components/layout"
 import About from "../components/about/about"
 import Portfolio from "../components/portfolio/portfolio"
-import Timeline from "../components/timeline"
+// import Timeline from "../components/timeline"
 
 import ProfileImage from "../images/profile-circle.png"
 
@@ -35,13 +35,13 @@ const IndexPage = () => (
         <h1>Things I've Made</h1>
         <Portfolio />
       </section>
-      <section id='experience' className='bg-image'>
+      {/* <section id='experience' className='bg-image'>
         <div className='section-content'>
           <h1>Experience</h1>
           <p>What have I been up to for the past few years?</p>
           <Timeline />
         </div>
-      </section>
+      </section> */}
     </Layout >
   </div>
 )
