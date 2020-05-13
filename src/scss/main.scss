@@ -67,7 +67,7 @@ section {
   position: absolute;
 }
 
-#home-content {
+.section-content {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -96,6 +96,11 @@ section {
   background-color: #cfd5d9;
   color: $darkblue;
   padding-bottom: 1px;
+}
+
+#experience {
+  background-color: $lightblue;
+  color: $darkblue;
 }
 
 /*******************
@@ -474,4 +479,25 @@ a:hover {
   width: 90vw!important;
   margin: auto;
   margin-bottom: 30px;
+}
+
+/*******************
+  TIMELINE
+********************/
+
+.vertical-timeline-element-content {
+  background: $white;
+  color: $darkblue
+}
+
+.vertical-timeline.vertical-timeline-custom-line::before {
+  background: $white;
+}
+
+.vertical-timeline.vertical-timeline-custom-line .vertical-timeline-element-icon {
+  box-shadow: 0 0 0 4px $white;
+}
+
+.vertical-timeline-element-content-arrow {
+  border-right-color: $white;
 }

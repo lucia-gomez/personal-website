@@ -2,9 +2,7 @@ import React from "react"
 import { Navbar, Nav } from 'react-bootstrap'
 import Scrollspy from 'react-scrollspy'
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons"
-
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import Doc from '../assets/resume.pdf';
 
 class CustomNav extends React.Component {
@@ -12,16 +10,17 @@ class CustomNav extends React.Component {
     super(props);
     this.sections = [
       { name: "Home", link: "/" }, { name: "About", link: "/#about" },
-      { name: "Portfolio", link: "/#portfolio" }, { name: "Resume", link: Doc, target: "_blank" },
+      { name: "Portfolio", link: "/#portfolio" }, { name: "Experience", link: "/#experience" },
+      { name: "Resume", link: Doc, target: "_blank" },
     ];
 
     this.icons = [
       {
-        icon: faGithub,
+        icon: <FaGithub size='20px' />,
         link: "https://github.com/lucia-gomez",
       },
       {
-        icon: faLinkedin,
+        icon: <FaLinkedin size='20px' />,
         link: "https://www.linkedin.com/in/lucia-g-22115110b/",
       }
     ];
@@ -33,7 +32,7 @@ class CustomNav extends React.Component {
         <Navbar.Toggle aria-controls="navbarCollapse" />
         <Navbar.Collapse id="navbarCollapse">
           <Scrollspy componentTag='div' defaultActiveKey="./#home"
-            className="navbar-nav mr-auto" items={['home', 'about', 'portfolio']}
+            className="navbar-nav mr-auto" items={['home', 'about', 'portfolio', 'experience']}
             currentClassName='isCurrent'>
             {this.sections.map((section, key) => (
               <Nav.Item as="li" key={key}>
@@ -44,7 +43,7 @@ class CustomNav extends React.Component {
           <Nav>
             {this.icons.map((icon, key) => (
               <Nav.Link key={key} href={icon.link}>
-                <FontAwesomeIcon icon={icon.icon} size={'lg'} />
+                {icon.icon}
               </Nav.Link>
             ))}
           </Nav>

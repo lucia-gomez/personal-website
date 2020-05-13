@@ -16,7 +16,6 @@ class LangBars extends React.Component {
       <div id='lang-bars-placeholder'>
         {this.bars.map((bar, key) => (
           <div className='lang-progress' key={key}>
-            {/* <p className="progress-label">{bar.name}</p> */}
             <ProgressBar now={bar.progress} label={bar.name} key={key} />
           </div>
         ))}
