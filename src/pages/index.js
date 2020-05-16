@@ -38,7 +38,6 @@ const IndexPage = () => (
       {/* <section id='experience' className='bg-image'>
         <div className='section-content'>
           <h1>Experience</h1>
-          <p>What have I been up to for the past few years?</p>
           <Timeline />
         </div>
       </section> */}

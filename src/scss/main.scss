@@ -25,8 +25,31 @@ html {
   position: relative;
 }
 
+p {
+  font-weight: 300;
+}
+
+a:not(.nav-link) {
+  color: $red;
+  box-shadow: inset 0 -10px 0 0 #c7edef;
+  font-weight: 500;
+  padding: 0px 2px;
+}
+
+a:hover:not(.nav-link) {
+  color: $darkblue;
+  box-shadow: inset 0 -10px 0 0 $lightblue;
+  text-decoration: none;
+}
+
 h5 {
   font-weight: 400;
+}
+
+@mixin header-shadow($color) {
+  text-shadow: 3px 6px $color;
+  // padding: 0px 5px;
+  // box-shadow: inset 0px -30px $color;
 }
 
 /*******************
@@ -77,11 +100,17 @@ section {
 #about {
   background-color: $white;
   color: $darkblue;
+  h1 {
+    @include header-shadow($lightblue)
+  }
 }
 
 #portfolio {
   background-color: $mediumblue;
   color: $white;
+  h1 {
+    @include header-shadow($darkblue)
+  }
 }
 
 #boba {
@@ -99,8 +128,11 @@ section {
 }
 
 #experience {
-  background-color: $lightblue;
-  color: $darkblue;
+  background-color: $darkblue;
+  color: $white;
+  h1 {
+    @include header-shadow($mediumblue)
+  }
 }
 
 /*******************
@@ -207,8 +239,12 @@ nav {
   border-radius: $responsive;
 }
 
+@mixin profile-pic-border() {
+  border: 2px solid $darkblue;
+}
+
 #profile-pic {
-  border: 5px solid $lightblue;
+  @include profile-pic-border();
   @include responsive-profile-pic(35vw, 250px, 350px, 200px);
 }
 
@@ -218,7 +254,7 @@ nav {
 }
 
 #overlay-profile-pic.overlay {
-  border: 5px solid $lightblue;
+  @include profile-pic-border();
   @include responsive-profile-pic(35vw, 250px, 350px, 200px);
 }
 
@@ -264,15 +300,10 @@ nav {
 h1 {
   font-family: $bigfont;
   position: relative;
+  @include header-shadow($red);
+  margin: 0px auto 20px auto;
+  width: fit-content;
   @include responsive-big-text(7vw, 50px, 90px, 60px);
-}
-
-a {
-  color: $red;
-}
-
-a:hover {
-  color: $darkblue;
 }
 
 /*******************
@@ -289,6 +320,8 @@ a:hover {
 
 #section-404 img {
   @include responsive-profile-pic(35vw, 230px, 350px, 200px);
+  padding-top: 20px;
+  position: relative;
   width: auto!important;
 }
 
@@ -302,51 +335,46 @@ a:hover {
   flex-wrap: wrap;
   justify-content: center;
   height: 100%;
+
+  .about-section {
+    width: 50%;
+  }
 }
 
 .about-section {
-  padding: 20px;
-  text-align: left;
-}
-
-#about-layout .about-section {
-  width: 50%;
   padding: 10px 40px;
+  text-align: left;
+
+  h4 {
+    color: $darkblue;
+    background-color: $lightblue;
+    box-shadow: 6px 5px $red;
+    width: fit-content;
+    padding: 2px 20px 2px 5px;
+    margin-bottom: 20px;
+    margin-left: -5px;
+  }
 }
 
 @media (max-width: $breakpoint-phone) {
   #about-layout {
     display: flex;
     flex-direction: column;
-  }
 
-  #about-layout .about-section {
-    width: 100%;
+    .about-section {
+      width: 100%;
+    }
   }
-}
-
-.about-section h4 {
-  color: $mediumblue;
 }
 
 #about-blurb {
-  background-color: $mediumblue;
-  background-position: top;
-  color: $white;
-  margin: 20px;
-  h4 {
-    color: $white;
-    position: relative;
-  }
+  padding-bottom: 40px;
+
   p {
-    padding: 5px;
-    background-color: rgba(69, 123, 157, 0.5);
     margin-bottom: 0px;
-    position: relative;
   }
   span {
-    color: $lightblue;
-    position: relative;
+    font-weight: 700;
   }
 }
 
@@ -425,6 +453,10 @@ a:hover {
 
   a {
     color: $darkblue;
+    padding: 0px;
+  }
+  a:hover {
+    text-decoration: underline;
   }
 }
 
@@ -485,9 +517,20 @@ a:hover {
   TIMELINE
 ********************/
 
+@media (max-width: $breakpoint-tablet) {
+  .vertical-timeline {
+    padding-right: 10px;
+  }
+}
+
 .vertical-timeline-element-content {
   background: $white;
-  color: $darkblue
+  color: $darkblue;
+  text-align: left;
+
+  p {
+    font-weight: 300;
+  }
 }
 
 .vertical-timeline.vertical-timeline-custom-line::before {
@@ -501,3 +544,16 @@ a:hover {
 .vertical-timeline-element-content-arrow {
   border-right-color: $white;
 }
+
+.vertical-timeline--two-columns .vertical-timeline-element-content .vertical-timeline-element-date {
+  text-align: left;
+}
+
+.vertical-timeline-element-title {
+  font-size: 26px;
+}
+
+.vertical-timeline-element-subtitle {
+  font-size: 20px;
+}
+
