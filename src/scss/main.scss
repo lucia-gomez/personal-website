@@ -545,6 +545,12 @@ h1 {
   border-right-color: $white;
 }
 
+@media only screen and (min-width: 1170px) {
+  .vertical-timeline--two-columns .vertical-timeline-element-content .vertical-timeline-element-date {
+    color: $white;
+  }
+}
+
 .vertical-timeline--two-columns .vertical-timeline-element-content .vertical-timeline-element-date {
   text-align: left;
 }
