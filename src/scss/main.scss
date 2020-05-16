@@ -485,9 +485,20 @@ a:hover {
   TIMELINE
 ********************/
 
+@media (max-width: $breakpoint-tablet) {
+  .vertical-timeline {
+    padding-right: 10px;
+  }
+}
+
 .vertical-timeline-element-content {
   background: $white;
-  color: $darkblue
+  color: $darkblue;
+  text-align: left;
+
+  p {
+    font-weight: 300;
+  }
 }
 
 .vertical-timeline.vertical-timeline-custom-line::before {
@@ -501,3 +512,16 @@ a:hover {
 .vertical-timeline-element-content-arrow {
   border-right-color: $white;
 }
+
+.vertical-timeline--two-columns .vertical-timeline-element-content .vertical-timeline-element-date {
+  text-align: left;
+}
+
+.vertical-timeline-element-title {
+  font-size: 26px;
+}
+
+.vertical-timeline-element-subtitle {
+  font-size: 20px;
+}
+
