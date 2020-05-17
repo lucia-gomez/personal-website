@@ -46,6 +46,11 @@ h5 {
   font-weight: 400;
 }
 
+.flex-horizontal {
+  display: flex;
+  flex-direction: row;
+}
+
 @mixin header-shadow($color) {
   text-shadow: 3px 6px $color;
   // padding: 0px 5px;
@@ -57,13 +62,14 @@ h5 {
 ********************/
 
 section {
-  min-height: 100vh;
+  max-height: fit-content;
   height: auto;
   padding-top: 75px;
   text-align: center;
 }
 
 #home {
+  height: 100vh;
   padding-top: 150px;
   position: relative;
   background-color: $darkblue;
@@ -119,6 +125,10 @@ section {
   background-position: center;
   background-size: cover;
   color: $darkblue;
+  height: 100vh;
+  h1 {
+    @include header-shadow($lightblue)
+  }
 }
 
 #boba-demos {
@@ -501,16 +511,36 @@ h1 {
   background: rgba(255, 255, 255, 0.2);
   margin: auto;
   width: 700px;
+  @media (max-width: $breakpoint-tablet) {
+    width: 500px;
+  }
   @media (max-width: $breakpoint-phone) {
     width: 300px;
   }
 }
 
-.tableauDemo iframe {
-  height: 80vh!important;
-  width: 90vw!important;
+#boba-buttons {
+  padding-top: 30px;
+  width: fit-content;
   margin: auto;
-  margin-bottom: 30px;
+
+  a {
+    box-shadow: none;
+  }
+
+  button {
+    background-color: $red;
+    border: none;
+    color: $white;
+    font-family: $smallfont;
+    margin: 10px;
+    width: 195px;
+    height: 40px;
+  }
+
+  @media (max-width: $breakpoint-phone) {
+    flex-direction: column;
+  }
 }
 
 /*******************
