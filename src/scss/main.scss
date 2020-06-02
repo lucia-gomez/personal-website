@@ -29,14 +29,14 @@ p {
   font-weight: 300;
 }
 
-a:not(.nav-link) {
+a:not(.nav-link .btn) {
   color: $red;
   box-shadow: inset 0 -10px 0 0 #c7edef;
   font-weight: 500;
   padding: 0px 2px;
 }
 
-a:hover:not(.nav-link) {
+a:hover:not(.nav-link .btn) {
   color: $darkblue;
   box-shadow: inset 0 -10px 0 0 $lightblue;
   text-decoration: none;
@@ -128,6 +128,17 @@ section {
   height: 100vh;
   h1 {
     @include header-shadow($lightblue)
+  }
+}
+
+#sign-search {
+  // background-color: $white;
+  padding-bottom: 30px;
+  h1 {
+    @include header-shadow(#b69ed6)
+  }
+  button {
+    background-color: #753cbf;
   }
 }
 
@@ -533,7 +544,7 @@ h1 {
     border: none;
     color: $white;
     font-family: $smallfont;
-    margin: 10px;
+    margin: 0px 10px;
     width: 195px;
     height: 40px;
   }
@@ -591,5 +602,27 @@ h1 {
 
 .vertical-timeline-element-subtitle {
   font-size: 20px;
+}
+
+
+
+.custom-carousel {
+  margin: 50px auto;
+  width: 800px;
+  img {
+    width: 800px;
+  }
+}
+
+.button-group {
+  justify-content: center;
+  a {
+    box-shadow: none;
+    margin: 10px 5px;
+  }
+  .btn {
+    border: none;
+    width: 150px;
+  }
 }
 

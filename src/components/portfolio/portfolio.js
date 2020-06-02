@@ -2,6 +2,7 @@ import React from "react"
 
 import GalleryItem from './gallery-item'
 
+import ImageSignSearch from "../../images/portfolio/signSearch.png"
 import ImageWebsite from "../../images/portfolio/website.png"
 import ImageSubreddit from "../../images/portfolio/subreddit.png"
 import ImageBoba from "../../images/portfolio/boba-map.png"
@@ -9,6 +10,13 @@ import ImageCAC from "../../images/portfolio/CAC-cards.png"
 import ImageSpaceBears from "../../images/portfolio/spacebears2.png"
 
 const projects = [
+  {
+    src: ImageSignSearch,
+    title: "Sign Search",
+    caption: "Chrome extension for convenient look-up of words in American Sign Language",
+    tools: "React, Javascript",
+    link: "/signSearch",
+  },
   {
     src: ImageSubreddit,
     title: "Subreddit Recommender",
