@@ -40,7 +40,7 @@ class Timeline extends React.Component {
             Most importantly, I instruct students on effective programming practices, debugging, and concepts in Java, Python, and OCaml. <br /><br />
             <a href='https://www.cs.cornell.edu/courses/cs2112/2019fa/'>CS 2112</a>- Object-Oriented Data Structures Honors- 2 semesters, received TA award <br />
             <a href='https://www.cs.cornell.edu/courses/cs4700/2019sp/'>CS 4700</a>- Foundations of Artificial Intelligence- 1 semester <br />
-            <a href='http://www.cs.cornell.edu/courses/cs3110/2020sp/'>CS 3110</a>- Functional Programming- 1 semester</p>
+            <a href='http://www.cs.cornell.edu/courses/cs3110/2020sp/'>CS 3110</a>- Functional Programming- 1 semester, received TA award</p>
         </VerticalTimelineElement >
         <VerticalTimelineElement
           date='Summer 2019'
