@@ -42,7 +42,7 @@ class CustomNav extends React.Component {
           </Scrollspy>
           <Nav>
             {this.icons.map((icon, key) => (
-              <Nav.Link key={key} href={icon.link}>
+              <Nav.Link key={key} href={icon.link} target='_blank' rel='noopener noreferrer'>
                 {icon.icon}
               </Nav.Link>
             ))}
