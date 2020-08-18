@@ -7,7 +7,7 @@ class LangBars extends React.Component {
     this.bars = [
       { name: "Python", progress: "95", }, { name: "Java", progress: "95", },
       { name: "OCaml", progress: "80", }, { name: "HTML/CSS", progress: "70", },
-      { name: "Sass", progress: "50", }, { name: "React", progress: "50", },
+      { name: "React", progress: "70", }, { name: "PHP/Hack", progress: "50", },
     ];
   }
 

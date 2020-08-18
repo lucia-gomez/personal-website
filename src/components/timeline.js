@@ -16,20 +16,13 @@ class Timeline extends React.Component {
     return (
       <VerticalTimeline className="vertical-timeline-custom-line">
         <VerticalTimelineElement
-          date='June 2020-present'
+          date='Summer 2020'
           icon={FacebookIcon}>
           <h3 className="vertical-timeline-element-title">Software Engineering Intern</h3>
           <h4 className="vertical-timeline-element-subtitle">Facebook</h4>
-          <p>TBD</p>
-        </VerticalTimelineElement >
-        <VerticalTimelineElement
-          date='Aug. 2019-present'
-          icon={CornellIcon}>
-          <h3 className="vertical-timeline-element-title">Co-President</h3>
-          <h4 className="vertical-timeline-element-subtitle">Cornell University Deaf Awareness Project</h4>
-          <p>As Co-President, I lead weekly meetings and oversee other board members as we plan events to raise awareness of and educate about the Deaf community and Deaf culture.
-          Member since Jan. 2018, and previously served as Events Coordinator.
-            We successfully advocated for the establishment of an <a href='https://cornellsun.com/2018/11/02/american-sign-language-courses-will-be-offered-as-soon-as-fall-2019/'>ASL curriculum at Cornell! </a></p>
+          <p>Full-stack web developer on the Marketplace Machine Learning Foundations team.
+          Developed a series of UI tools to empower logging on Marketplace, to ensure quality training data for ML models.
+          </p>
         </VerticalTimelineElement >
         <VerticalTimelineElement
           date='Fall 2018-present'
@@ -40,7 +33,16 @@ class Timeline extends React.Component {
             Most importantly, I instruct students on effective programming practices, debugging, and concepts in Java, Python, and OCaml. <br /><br />
             <a href='https://www.cs.cornell.edu/courses/cs2112/2019fa/'>CS 2112</a>- Object-Oriented Data Structures Honors- 2 semesters, received TA award <br />
             <a href='https://www.cs.cornell.edu/courses/cs4700/2019sp/'>CS 4700</a>- Foundations of Artificial Intelligence- 1 semester <br />
-            <a href='http://www.cs.cornell.edu/courses/cs3110/2020sp/'>CS 3110</a>- Functional Programming- 1 semester, received TA award</p>
+            <a href='http://www.cs.cornell.edu/courses/cs3110/2020sp/'>CS 3110</a>- Functional Programming- 2 semesters, received TA award</p>
+        </VerticalTimelineElement >
+        <VerticalTimelineElement
+          date='Aug. 2019-June 2020'
+          icon={CornellIcon}>
+          <h3 className="vertical-timeline-element-title">Co-President</h3>
+          <h4 className="vertical-timeline-element-subtitle">Cornell University Deaf Awareness Project</h4>
+          <p>As Co-President, I led weekly meetings and oversaw other board members as we planned events to raise awareness of and educate about the Deaf community and Deaf culture.
+          Member since Jan. 2018, and previously served as Events Coordinator.
+            We successfully advocated for the establishment of an <a href='https://cornellsun.com/2018/11/02/american-sign-language-courses-will-be-offered-as-soon-as-fall-2019/'>ASL curriculum at Cornell! </a></p>
         </VerticalTimelineElement >
         <VerticalTimelineElement
           date='Summer 2019'

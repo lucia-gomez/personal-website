@@ -1,9 +1,10 @@
-$red: #e63946;
-$darkblue: #1d3557;
-$mediumblue: #457b9d;
-$lightblue: #a8dadc;
+$red: #fc6450;
+$darkblue: #4d2c91;
+$mediumblue: #7e57c2;
+$lightblue: #d1c4e9;
 $white: #f1faee;
-$overlay-color: rgba(29, 53, 87, 0.9);
+$lightorange: #ffdcca;
+$overlay-color: rgba(252, 100, 80, 0.95);
 $smallfont: 'Roboto', sans-serif;
 $bigfont: 'Anton', sans-serif;
 
@@ -31,7 +32,7 @@ p {
 
 a:not(.nav-link) {
   color: $red;
-  box-shadow: inset 0 -10px 0 0 #c7edef;
+  box-shadow: inset 0 -10px 0 0 $lightorange;
   font-weight: 500;
   padding: 0px 2px;
 }
@@ -364,7 +365,7 @@ h1 {
 }
 
 .about-section {
-  padding: 10px 40px;
+  padding: 30px 40px;
   text-align: left;
 
   h4 {
