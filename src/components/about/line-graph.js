@@ -20,11 +20,11 @@ function dataset(data, label, color) {
 const data = {
   labels: Array.from(Array(5).keys()),
   datasets: [
-    dataset([90, 0, 0, 0, 0], 'Jogging', '#a8dadc'),
-    dataset([20, 20, 20, 20, 20], 'Anxiously refreshing NYTimes', '#457b9d'),
-    dataset([0, 0, 0, 0, 70], 'Re-reading Harry Potter', '#1d3557'),
-    dataset([50, 60, 90, 90, 90], 'Building this website', '#e63946'),
-    dataset([60, 50, 50, 50, 40], 'Pokemon Go', '#f7868e'),
+    dataset([90, 0, 0, 0, 0], 'Jogging', '#d1c4e9'),
+    dataset([20, 20, 20, 20, 20], 'Anxiously refreshing NYTimes', '#7e57c2'),
+    dataset([0, 0, 0, 0, 70], 'Re-reading Harry Potter', '#4d2c91'),
+    dataset([50, 60, 90, 90, 90], 'Building this website', '#fc6450'),
+    dataset([60, 50, 50, 50, 40], 'Pokemon Go', '#fcaa9f'),
   ]
 };
 
